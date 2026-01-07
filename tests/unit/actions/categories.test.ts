@@ -17,6 +17,11 @@ vi.mock('@/lib/supabase/server', () => ({
       insert: vi.fn(() => ({ error: null })),
       update: vi.fn(() => ({ eq: vi.fn(() => ({ error: null })) })),
       delete: vi.fn(() => ({ eq: vi.fn(() => ({ error: null })) })),
+      select: vi.fn(() => ({
+        eq: vi.fn(() => ({
+          limit: vi.fn(() => ({ data: [], error: null })),
+        })),
+      })),
     })),
   })),
 }))
