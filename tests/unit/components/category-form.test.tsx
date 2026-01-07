@@ -64,6 +64,7 @@ describe('CategoryForm', () => {
       id: 'test-id',
       slug: 'test-slug',
       name_cs: 'Test Category',
+      name_en: null,
       description_cs: 'Test description',
       icon: 'TestIcon',
       is_active: true,
