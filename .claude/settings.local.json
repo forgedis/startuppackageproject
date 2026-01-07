@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init:*)",
+      "Bash(dir:*)",
+      "Bash(npm install:*)",
+      "Bash(ls:*)",
+      "Bash(npm test:*)",
+      "Bash(npx playwright test:*)",
+      "Bash(npm run test:e2e:*)",
+      "Bash(npx supabase:*)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+import '@testing-library/jest-dom'
+import { afterEach } from 'vitest'
+import { cleanup } from '@testing-library/react'
+
+// Cleanup after each test
+afterEach(() => {
+  cleanup()
+})
+
+// Mock environment variables
+if (typeof process !== 'undefined' && process.env) {
+  process.env.NEXT_PUBLIC_SUPABASE_URL = 'https://test.supabase.co'
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'test-key'
+}
