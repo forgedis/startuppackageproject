@@ -68,6 +68,7 @@ export async function submitLead(
     let offerName: string | undefined
 
     if (data.partner_id) {
+      // @ts-ignore - Supabase SSR type inference limitation
       const { data: partner } = await supabase
         .from('partners')
         .select('name')
@@ -77,6 +78,7 @@ export async function submitLead(
     }
 
     if (data.offer_id) {
+      // @ts-ignore - Supabase SSR type inference limitation
       const { data: offer } = await supabase
         .from('offers')
         .select('title')
