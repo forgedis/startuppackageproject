@@ -3,6 +3,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { leadSchema, type LeadFormValues } from '@/lib/validations'
 import { headers } from 'next/headers'
+import { sendLeadNotificationToAdmin, sendLeadConfirmationToUser } from '@/lib/email'
 
 export async function submitLead(
   data: LeadFormValues & {
@@ -62,8 +63,46 @@ export async function submitLead(
       }
     }
 
-    // TODO: Send email notification to partner
-    // TODO: Send confirmation email to user
+    // Get partner and offer names if available
+    let partnerName: string | undefined
+    let offerName: string | undefined
+
+    if (data.partner_id) {
+      const { data: partner } = await supabase
+        .from('partners')
+        .select('name')
+        .eq('id', data.partner_id)
+        .single()
+      partnerName = partner?.name
+    }
+
+    if (data.offer_id) {
+      const { data: offer } = await supabase
+        .from('offers')
+        .select('title')
+        .eq('id', data.offer_id)
+        .single()
+      offerName = offer?.title
+    }
+
+    // Send confirmation email to user only if they selected an offer
+    if (data.offer_id && offerName) {
+      const emailData = {
+        firstName: validatedData.first_name,
+        lastName: validatedData.last_name,
+        email: validatedData.email,
+        phone: validatedData.phone,
+        companyName: validatedData.company_name,
+        note: validatedData.note,
+        partnerName,
+        offerName,
+      }
+
+      // Send confirmation email in background (don't block the response)
+      sendLeadConfirmationToUser(emailData).catch((err) => {
+        console.error('Error sending confirmation email:', err)
+      })
+    }
 
     return {
       success: true,
