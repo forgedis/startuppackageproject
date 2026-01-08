@@ -63,6 +63,7 @@ function SortableItem({ partner, onDelete }: SortableItemProps) {
     if (confirm(`Opravdu chcete smazat partnera "${partner.name}"?`)) {
       try {
         await deletePartner(partner.id)
+        onDelete(partner.id)
       } catch (error) {
         alert(error instanceof Error ? error.message : 'Chyba při mazání partnera')
       }

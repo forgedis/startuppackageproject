@@ -61,6 +61,7 @@ function SortableItem({ category, onDelete }: SortableItemProps) {
     if (confirm(`Opravdu chcete smazat kategorii "${category.name_cs}"?`)) {
       try {
         await deleteCategory(category.id)
+        onDelete(category.id)
       } catch (error) {
         alert(error instanceof Error ? error.message : 'Chyba při mazání kategorie')
       }

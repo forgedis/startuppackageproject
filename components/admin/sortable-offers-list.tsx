@@ -62,6 +62,7 @@ function SortableItem({ offer, onDelete }: SortableItemProps) {
     if (confirm(`Opravdu chcete smazat nabídku "${offer.title_cs}"?`)) {
       try {
         await deleteOffer(offer.id)
+        onDelete(offer.id)
       } catch (error) {
         alert(error instanceof Error ? error.message : 'Chyba při mazání nabídky')
       }
