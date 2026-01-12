@@ -56,7 +56,9 @@ export function OfferCard({ offer }: OfferCardProps) {
           <CardTitle className="text-xl flex items-center gap-2">
             {offer.title_cs}
             {offer.external_program_url && (
-              <ExternalLink className="h-4 w-4 text-primary flex-shrink-0" title="Otevře se v novém okně" />
+              <span title="Otevře se v novém okně">
+                <ExternalLink className="h-4 w-4 text-primary flex-shrink-0" />
+              </span>
             )}
           </CardTitle>
           {offer.subtitle_cs && (

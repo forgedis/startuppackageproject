@@ -10,7 +10,8 @@
       "Bash(npm run test:e2e:*)",
       "Bash(npx supabase:*)",
       "Bash(npm run build:*)",
-      "Bash(node scripts/apply-migration.mjs:*)"
+      "Bash(node scripts/apply-migration.mjs:*)",
+      "Bash(git add:*)"
     ]
   }
 }
