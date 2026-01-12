@@ -14,9 +14,9 @@ export function Header() {
             href="/#kategorie"
             className="transition-colors hover:text-primary"
           >
-            Kategorie
+            Přehled nabídek
           </Link>
-          <Link href="/#jak-to-funguje" className="transition-colors hover:text-primary">
+          <Link href="/faq" className="transition-colors hover:text-primary">
             Jak to funguje
           </Link>
         </nav>

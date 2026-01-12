@@ -28,11 +28,8 @@ export function CategoryGridImproved({ categories }: CategoryGridImprovedProps) 
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-            Vyberte si kategorii
+            Prozkoumejte nabídky od partnerů
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Prozkoumejte nabídky v oblasti, kterou právě potřebujete
-          </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -50,42 +47,42 @@ export function CategoryGridImproved({ categories }: CategoryGridImprovedProps) 
               : Icons.Box
 
             return (
-              <Card key={category.id} className="flex flex-col border-2 transition-all hover:shadow-lg hover:border-primary/50">
-                <CardHeader>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    {IconComponent && <IconComponent className="h-6 w-6" />}
-                  </div>
-                  <CardTitle className="text-xl font-bold">
-                    {category.name_cs}
-                  </CardTitle>
-                  {category.description_cs && (
-                    <p className="text-sm text-muted-foreground mt-2">
-                      {category.description_cs}
-                    </p>
-                  )}
-                </CardHeader>
-
-                <CardContent className="flex-1">
-                  {partners && partners.length > 0 && (
-                    <div>
-                      <p className="text-sm font-semibold mb-2">
-                        Nabídky od:
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        {partners.join(', ')}
-                      </p>
+              <Link key={category.id} href={`/kategorie/${category.slug}`} className="block h-full">
+                <Card className="flex flex-col h-full border-2 transition-all hover:shadow-xl hover:shadow-purple-200 hover:border-purple-500 hover:scale-[1.02] cursor-pointer">
+                  <CardHeader>
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      {IconComponent && <IconComponent className="h-6 w-6" />}
                     </div>
-                  )}
-                </CardContent>
+                    <CardTitle className="text-xl font-bold">
+                      {category.name_cs}
+                    </CardTitle>
+                    {category.description_cs && (
+                      <p className="text-sm text-muted-foreground mt-2">
+                        {category.description_cs}
+                      </p>
+                    )}
+                  </CardHeader>
 
-                <CardFooter>
-                  <Link href={`/kategorie/${category.slug}`} className="w-full">
-                    <Button className="w-full" variant="default">
+                  <CardContent className="flex-1">
+                    {partners && partners.length > 0 && (
+                      <div>
+                        <p className="text-sm font-semibold mb-2">
+                          Nabídky od:
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          {partners.join(', ')}
+                        </p>
+                      </div>
+                    )}
+                  </CardContent>
+
+                  <CardFooter className="justify-center">
+                    <Button className="px-8 hover:bg-purple-600 hover:shadow-lg hover:shadow-purple-300 hover:scale-105 transition-all" variant="default">
                       Tohle mě zajímá
                     </Button>
-                  </Link>
-                </CardFooter>
-              </Card>
+                  </CardFooter>
+                </Card>
+              </Link>
             )
           })}
         </div>

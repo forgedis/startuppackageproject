@@ -63,6 +63,8 @@ export interface Database {
           full_description: string | null
           website_url: string | null
           contact_email: string | null
+          contact_person: string | null
+          contact_phone: string | null
           is_verified: boolean
           is_featured: boolean
           sort_order: number
@@ -78,6 +80,8 @@ export interface Database {
           full_description?: string | null
           website_url?: string | null
           contact_email?: string | null
+          contact_person?: string | null
+          contact_phone?: string | null
           is_verified?: boolean
           is_featured?: boolean
           sort_order?: number
@@ -93,6 +97,8 @@ export interface Database {
           full_description?: string | null
           website_url?: string | null
           contact_email?: string | null
+          contact_person?: string | null
+          contact_phone?: string | null
           is_verified?: boolean
           is_featured?: boolean
           sort_order?: number
@@ -113,6 +119,7 @@ export interface Database {
           pricing_details: Json | null
           conditions: Json | null
           cta_text: string
+          external_program_url: string | null
           meta_title: string | null
           meta_description: string | null
           is_active: boolean
@@ -132,6 +139,7 @@ export interface Database {
           pricing_details?: Json | null
           conditions?: Json | null
           cta_text?: string
+          external_program_url?: string | null
           meta_title?: string | null
           meta_description?: string | null
           is_active?: boolean
@@ -151,6 +159,7 @@ export interface Database {
           pricing_details?: Json | null
           conditions?: Json | null
           cta_text?: string
+          external_program_url?: string | null
           meta_title?: string | null
           meta_description?: string | null
           is_active?: boolean

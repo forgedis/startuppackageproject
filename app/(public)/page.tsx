@@ -2,7 +2,6 @@ import { createClient } from '@/lib/supabase/server'
 import { HeroSection } from '@/components/home/hero-section'
 import { ValueProposition } from '@/components/home/value-proposition'
 import { CategoryGridImproved } from '@/components/home/category-grid-improved'
-import { HowItWorks } from '@/components/home/how-it-works'
 
 export default async function HomePage() {
   const supabase = await createClient()
@@ -39,7 +38,6 @@ export default async function HomePage() {
       {categories && categories.length > 0 && (
         <CategoryGridImproved categories={categories} />
       )}
-      <HowItWorks />
     </>
   )
 }

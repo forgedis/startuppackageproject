@@ -138,13 +138,24 @@ export function PartnerForm({ partner }: PartnerFormProps) {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="website_url">Webová stránka</Label>
+              <Label htmlFor="contact_person">Kontaktní osoba</Label>
               <Input
-                id="website_url"
-                name="website_url"
-                type="url"
-                defaultValue={partner?.website_url || ''}
-                placeholder="https://www.partner.com"
+                id="contact_person"
+                name="contact_person"
+                defaultValue={partner?.contact_person || ''}
+                placeholder="Jan Novák"
+                disabled={loading}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="contact_phone">Telefon</Label>
+              <Input
+                id="contact_phone"
+                name="contact_phone"
+                type="tel"
+                defaultValue={partner?.contact_phone || ''}
+                placeholder="+420 123 456 789"
                 disabled={loading}
               />
             </div>
@@ -157,6 +168,18 @@ export function PartnerForm({ partner }: PartnerFormProps) {
                 type="email"
                 defaultValue={partner?.contact_email || ''}
                 placeholder="kontakt@partner.com"
+                disabled={loading}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="website_url">Webová stránka</Label>
+              <Input
+                id="website_url"
+                name="website_url"
+                type="url"
+                defaultValue={partner?.website_url || ''}
+                placeholder="https://www.partner.com"
                 disabled={loading}
               />
             </div>

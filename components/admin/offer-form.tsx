@@ -257,6 +257,21 @@ export function OfferForm({ offer, partners, categories }: OfferFormProps) {
                 Text zobrazen na tlačítku pro kontakt (výchozí: "Mám zájem")
               </p>
             </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="external_program_url">Externí URL programu partnera</Label>
+              <Input
+                id="external_program_url"
+                name="external_program_url"
+                type="url"
+                defaultValue={offer?.external_program_url || ''}
+                placeholder="https://czechfounders.org/join-our-community/"
+                disabled={loading}
+              />
+              <p className="text-sm text-muted-foreground">
+                Pokud je vyplněno, tlačítko "Mám zájem" přesměruje na tuto URL místo zobrazení kontaktního formuláře (otevře se v novém okně)
+              </p>
+            </div>
           </CardContent>
         </Card>
 

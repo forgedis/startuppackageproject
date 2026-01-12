@@ -13,8 +13,8 @@ const benefits = [
   },
   {
     icon: Zap,
-    title: 'Požádejte poptávku',
-    description: 'partner se vám ozve a dojdete k podrobnosti',
+    title: 'Pošlete poptávku',
+    description: 'partner se vám ozve a dojednáte podrobnosti',
   },
 ]
 
