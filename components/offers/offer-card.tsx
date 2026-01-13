@@ -24,15 +24,18 @@ export function OfferCard({ offer }: OfferCardProps) {
         className="flex flex-col h-full transition-all hover:shadow-xl hover:shadow-purple-200 hover:border-purple-500 hover:scale-[1.02] cursor-pointer"
         onClick={handleCardClick}
       >
-        <CardHeader>
+        <CardHeader className="space-y-4 pb-4">
+          {/* Partner Name */}
           {partner?.name && (
-            <div className="mb-3">
-              <span className="text-base font-semibold text-foreground">
+            <div>
+              <span className="text-lg font-bold text-foreground">
                 {partner.name}
               </span>
             </div>
           )}
-          <CardTitle className="text-2xl flex items-center gap-2 mb-4">
+
+          {/* Offer Title */}
+          <CardTitle className="text-2xl font-bold flex items-center gap-2">
             {offer.title_cs}
             {offer.external_program_url && (
               <span title="Otevře se v novém okně">
@@ -42,16 +45,18 @@ export function OfferCard({ offer }: OfferCardProps) {
           </CardTitle>
         </CardHeader>
 
-        <CardContent className="flex-1">
-          <div className="prose prose-sm max-w-none mb-6">
-            <p className="text-base text-foreground whitespace-pre-line">
+        {/* Offer Description - Main Content */}
+        <CardContent className="flex-1 pt-0">
+          <div className="space-y-3">
+            <h3 className="text-base font-semibold text-muted-foreground mb-3">Nabídka:</h3>
+            <div className="text-base leading-relaxed text-foreground whitespace-pre-line">
               {offer.description_cs}
-            </p>
+            </div>
           </div>
         </CardContent>
 
-        <CardFooter className="justify-center">
-          <Button className="px-8 hover:bg-purple-600 hover:shadow-lg hover:shadow-purple-300 hover:scale-105 transition-all">
+        <CardFooter className="justify-center pt-6">
+          <Button className="w-full max-w-xs text-base py-6 hover:bg-purple-600 hover:shadow-lg hover:shadow-purple-300 hover:scale-105 transition-all">
             {offer.cta_text || 'Mám zájem'}
           </Button>
         </CardFooter>
