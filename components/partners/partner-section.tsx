@@ -11,18 +11,6 @@ export function PartnerSection({ partner }: PartnerSectionProps) {
       <h2 className="mb-4 text-2xl font-bold">O partnerovi</h2>
 
       <div className="space-y-4">
-        {/* Partner Logo and Name */}
-        <div className="flex items-center gap-4">
-          {partner.logo_url && (
-            <img
-              src={partner.logo_url}
-              alt={partner.name}
-              className="h-16 w-16 object-contain rounded-lg border border-border bg-white p-2"
-            />
-          )}
-          <h3 className="text-lg font-semibold">{partner.name}</h3>
-        </div>
-
         {/* Partner Description */}
         <div>
           <p className="text-muted-foreground">

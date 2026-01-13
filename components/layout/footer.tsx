@@ -25,23 +25,18 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation & FAQ */}
+          {/* Navigation */}
           <div className="space-y-4">
             <h4 className="text-sm font-semibold">Navigace</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link href="/#kategorie" className="hover:text-primary transition-colors">
-                  Kategorie
+                  Přehled nabídek
                 </Link>
               </li>
               <li>
                 <Link href="/#jak-to-funguje" className="hover:text-primary transition-colors">
                   Jak to funguje
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="hover:text-primary transition-colors">
-                  FAQ
                 </Link>
               </li>
               <li>
@@ -75,27 +70,27 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* FAQ Highlights */}
+          {/* Jak to funguje */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Často kladené otázky</h4>
+            <h4 className="text-sm font-semibold">Jak to funguje</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="/faq" className="hover:text-primary transition-colors">
+                <Link href="/#jak-to-funguje" className="hover:text-primary transition-colors">
                   Kdo může nabídky využít?
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-primary transition-colors">
+                <Link href="/#jak-to-funguje" className="hover:text-primary transition-colors">
                   Budu muset něco platit předem?
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-primary transition-colors">
+                <Link href="/#jak-to-funguje" className="hover:text-primary transition-colors">
                   Kde je háček?
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-primary transition-colors">
+                <Link href="/#jak-to-funguje" className="hover:text-primary transition-colors">
                   Proč partnerům věřit?
                 </Link>
               </li>
