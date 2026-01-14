@@ -1,4 +1,3 @@
-import { CheckCircle2 } from 'lucide-react'
 import type { OfferConditions as OfferConditionsType } from '@/types'
 
 interface OfferConditionsProps {
@@ -26,14 +25,13 @@ export function OfferConditions({ conditions }: OfferConditionsProps) {
   if (conditionsList.length === 0) return null
 
   return (
-    <div>
-      <h2 className="mb-4 text-2xl font-bold">Podmínky</h2>
-      <div className="space-y-2">
+    <div className="border-t pt-6">
+      <h3 className="mb-3 text-base font-semibold text-muted-foreground">Podmínky:</h3>
+      <div className="space-y-1.5">
         {conditionsList.map((condition, index) => (
-          <div key={index} className="flex items-start gap-2">
-            <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-            <span className="text-muted-foreground">{condition}</span>
-          </div>
+          <p key={index} className="text-sm text-muted-foreground">
+            {condition}
+          </p>
         ))}
       </div>
     </div>

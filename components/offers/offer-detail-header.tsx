@@ -10,7 +10,7 @@ export function OfferDetailHeader({ offer }: OfferDetailHeaderProps) {
   return (
     <section className="border-b bg-gradient-to-b from-purple-50 to-background py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-4xl">
+        <div className="max-w-4xl">
           {/* Partner Logo */}
           {partner?.logo_url && (
             <div className="mb-6">
