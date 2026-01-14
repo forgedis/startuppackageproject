@@ -19,9 +19,9 @@ export function OfferCard({ offer }: OfferCardProps) {
     router.push(`/nabidka/${offer.slug}`)
   }
 
-  // Split description into lines and filter empty ones
+  // Split description into sentences - either by newlines or periods
   const descriptionLines = offer.description_cs
-    .split('\n')
+    .split(/[.\n]+/) // Split by period or newline
     .map(line => line.trim())
     .filter(line => line.length > 0)
 
@@ -57,10 +57,10 @@ export function OfferCard({ offer }: OfferCardProps) {
           {/* Nabídka - Main value proposition */}
           <div className="space-y-3">
             <h3 className="text-base font-semibold text-muted-foreground">Nabídka:</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {descriptionLines.map((line, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
+                <li key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
                   <span className="text-base leading-relaxed text-foreground">{line}</span>
                 </li>
               ))}
