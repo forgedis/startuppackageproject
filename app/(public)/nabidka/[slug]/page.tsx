@@ -77,24 +77,29 @@ export default async function OfferPage({ params }: OfferPageProps) {
       <OfferDetailHeader offer={offer} />
 
       <div className="container mx-auto px-4 py-12">
-        <div className="grid gap-12 lg:grid-cols-3">
-          {/* Main Content */}
-          <div className="lg:col-span-2 space-y-8">
-            <OfferDescription description={offer.description_cs} />
+        <div className="max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-3">
+            {/* Left Column - Lead Form */}
+            <div className="lg:col-span-1">
+              <div className="sticky top-24">
+                <LeadFormSection offer={offer} />
+              </div>
+            </div>
 
-            {offer.conditions && (
-              <OfferConditions conditions={offer.conditions} />
-            )}
+            {/* Right Column - Main Content */}
+            <div className="lg:col-span-2 space-y-8">
+              {/* Offer Description */}
+              <OfferDescription description={offer.description_cs} />
 
-            {offer.partner && (
-              <PartnerSection partner={offer.partner} />
-            )}
-          </div>
+              {/* Conditions */}
+              {offer.conditions && (
+                <OfferConditions conditions={offer.conditions} />
+              )}
 
-          {/* Sidebar - Lead Form */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-24">
-              <LeadFormSection offer={offer} />
+              {/* Partner Section */}
+              {offer.partner && (
+                <PartnerSection partner={offer.partner} />
+              )}
             </div>
           </div>
         </div>
