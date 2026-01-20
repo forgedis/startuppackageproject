@@ -53,11 +53,11 @@ export function CategoryGridImproved({ categories }: CategoryGridImprovedProps) 
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                       {IconComponent && <IconComponent className="h-6 w-6" />}
                     </div>
-                    <CardTitle className="text-xl font-bold">
+                    <CardTitle className="text-2xl font-bold">
                       {category.name_cs}
                     </CardTitle>
                     {category.description_cs && (
-                      <p className="text-sm text-muted-foreground mt-2">
+                      <p className="text-base text-muted-foreground mt-2">
                         {category.description_cs}
                       </p>
                     )}
@@ -66,10 +66,10 @@ export function CategoryGridImproved({ categories }: CategoryGridImprovedProps) 
                   <CardContent className="flex-1">
                     {partners && partners.length > 0 && (
                       <div>
-                        <p className="text-sm font-semibold mb-2">
+                        <p className="text-base font-semibold mb-2">
                           Nabídky od:
                         </p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-base text-muted-foreground">
                           {partners.join(', ')}
                         </p>
                       </div>

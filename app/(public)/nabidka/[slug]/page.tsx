@@ -79,15 +79,15 @@ export default async function OfferPage({ params }: OfferPageProps) {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-3">
-            {/* Left Column - Lead Form */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-24">
+            {/* Left Column - Lead Form (last on mobile, first on desktop) */}
+            <div className="order-last lg:order-first lg:col-span-1">
+              <div className="lg:sticky lg:top-24">
                 <LeadFormSection offer={offer} />
               </div>
             </div>
 
-            {/* Right Column - Main Content */}
-            <div className="lg:col-span-2 space-y-8">
+            {/* Right Column - Main Content (first on mobile) */}
+            <div className="order-first lg:order-last lg:col-span-2 space-y-8">
               {/* Offer Description */}
               <OfferDescription description={offer.description_cs} />
 
